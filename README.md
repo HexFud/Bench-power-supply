@@ -3,6 +3,8 @@
 I designed a simple and cost effective bench power supply for everyone.
 To simplify the assmebly process i designed in kicad a small pcb where you connect external components
 
+ ![PCB 3D model](/media/power_pcb.png)
+
 ## Specifications
 * IN Voltage: 24V DC
 * Power Module: compatible with buck modules CC/CV based on XL4015 (5A) or XL4016 (8A)
