@@ -1,30 +1,30 @@
-# Bill of Materials (BOM) & Estimated Costs (USD)
-
-### Main Modules & Hardware
-| Qty | Component | Description | Est. Price (USD) |
-| :---: | :--- | :--- | :--- |
-| **1** | Buck Converter Module | CC/CV Step-Down Module (XL4015 5A or XL4016 8A) | $4.00 - $7.00 |
-| **1** | Digital Panel Meter | Dual LED Display (Red/Blue), 100V / 10A (5 wires) | $4.00 - $6.00 |
-| **1** | Power Supply Unit | 24V DC Output Power Brick (min. 4A - 5A) | $15.00 - $22.00 |
-| **1 (Batch)** | Custom PCB Manufacturing | Professional PCB fabrication (5-10 boards + shipping) | $15.00 - $25.00 |
-| **1** | **C1** | 1000µF, 50V Electrolytic Capacitor (THT) | $0.30 |
-| **1** | **C2** | 100nF (0.1µF), 50V Ceramic Capacitor (SMD 0805) | $0.10 |
-| **1** | **D1** | Schottky Diode 10A (e.g., 10SQ045) | $0.50 |
-| **1** | **D2** | Status LED (0805 / THT) | $0.10 |
-| **1** | **F1** | 6.3A Fuse + 5x20mm PCB Holder | $0.80 |
-| **2** | **R1, R2** | 2.2kΩ Resistors (SMD 0805) | $0.10 |
-| **2** | **J1, J7** | Phoenix Screw Terminal Blocks (2-pin & 4-pin, 5.08mm) | $0.50 each |
-| **2** | **J3, J4** | Sockets / Test Point Pads | $0.10 |
-| **2** | **J8, J9** | Pin Headers (3-pin & 2-pin, 2.54mm) | $0.20 |
-| **2** | Potentiometers | Linear Potentiometers (Matched to Buck module, e.g., 10kΩ) | $1.00 each |
-| **2** | Control Knobs | Plastic or Aluminum Knobs | $0.50 each |
-| **2** | DC Toggle Switches | SPST Heavy-Duty Switches (min. 10A DC) | $1.50 each |
-| **2** | Binding Posts | Heavy-Duty Banana Jacks (1x Red, 1x Black - set) | $4.00 (pair) |
-| **-** | Wiring | Heavy-duty hookup wire (AWG 14 or 16) | $6.00 (spool) |
-
-### Diagnostic & Testing Equipment (Optional but Recommended)
-| Qty | Equipment | Description & Purpose | Est. Price (USD) |
-| :---: | :--- | :--- | :--- |
-| **1** | **Digital Storage Oscilloscope** | Entry-level 2-channel scope (e.g., Hantek 2D72, FNIRSI, or basic Siglent/Rigol used). Essential for ripple analysis, transient response, and troubleshooting high-frequency PWM noise. | $150.00 - $170.00 |
-
-** Estimated Total Project Cost:** ~$210.00 - $260.00
+"Ref","Qty","Component","Value / Notes","KiCad Footprint","Supplier","LCSC Search Link","Est. Price USD (line total)"
+"A1","1","Arduino Nano ESP32",,"Module:Arduino_Nano","Arduino Store / Mouser","https://it.aliexpress.com/item/1005009296627043.html","5"
+"C1","1","Electrolytic capacitor","1000uF 50V, radial 12.5 mm","Capacitor_THT:CP_Radial_D12.5mm_P5.00mm","LCSC","https://www.lcsc.com/search?q=1000uF+50V+radial","0,82"
+"C2","1","Ceramic capacitor","100nF 50V X7R, 0805","Capacitor_SMD:C_0805_2012Metric","LCSC","https://www.lcsc.com/search?q=100nF+50V+0805","0,94"
+"C3","1","Electrolytic capacitor","100uF 25V, radial 6.3 mm (change symbol to C_Polarized)","Capacitor_THT:CP_Radial_D6.3mm_P2.50mm","LCSC","https://www.lcsc.com/search?q=100uF+25V+radial","0.1"
+"C4","1","Tantalum capacitor","22uF 16V, case B (AMS1117 stability)","Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B","LCSC","https://www.lcsc.com/search?q=22uF+16V+tantalum","0.2"
+"C5","1","Low-ESR electrolytic capacitor","220uF 25V or higher, radial 8 mm (change symbol to C_Polarized)","Capacitor_THT:CP_Radial_D8.0mm_P3.50mm","LCSC","https://www.lcsc.com/search?q=220uF+25V+low+ESR","0.3"
+"D1","1","SMBJ36A unidirectional TVS","Not the CA version (bidirectional)","Diode_SMD:D_SMB","LCSC","https://www.lcsc.com/search?q=SMBJ36A","0.50"
+"D2","1","LED 0805","Power indicator","LED_SMD:LED_0805_2012Metric","LCSC","https://www.lcsc.com/search?q=LED+0805","0.03"
+"D3","1","SS36 Schottky diode","3A 60V, SMA","Diode_SMD:D_SMA","LCSC","https://www.lcsc.com/search?q=SS36","0.15"
+"F1","1","6.3A 5x20 fuse + fuse holder","Pick the holder first, then adapt the footprint","Fuse:Fuseholder_Cylinder-5x20mm_Bulgin_FX0457_Horizontal_Closed","LCSC","https://www.lcsc.com/search?q=5x20+fuse+holder+PCB","1.0"
+"J1","1","2-pin screw terminal","5.08 mm, 24V input","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","LCSC","https://www.lcsc.com/search?q=5.08mm+screw+terminal+2P","0.5"
+"J7","1","4-pin screw terminal","5.08 mm, to the DPS module","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-4-5.08_1x04_P5.08mm_Horizontal","LCSC","https://www.lcsc.com/search?q=5.08mm+screw+terminal+4P","0.8"
+"J2, J8","2","1x4 female header","I2C displays (GND, 3V3, SDA, SCL): check the pin order of your modules","Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical","LCSC","https://www.lcsc.com/search?q=female+header+1x4+2.54","0.3"
+"J9, J10","2","1x5 female header","Encoders (GND, 3V3, SW, DT, CLK)","Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical","LCSC","https://www.lcsc.com/search?q=female+header+1x5+2.54","0.3"
+"J5","1","1x3 female header","Serial to DPS (TX, RX, GND); delete J6","Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical","LCSC","https://www.lcsc.com/search?q=female+header+1x3+2.54","0.2"
+"L1","1","Power inductor","47uH, at least 3.5A (e.g. SRR1260 series); check the LM2596 datasheet nomograph","Inductor_SMD:L_Bourns_SRR1260","LCSC","https://www.lcsc.com/search?q=SRR1260-470M","1.50"
+"R1, R2","2","10k resistor","0805","Resistor_SMD:R_0805_2012Metric","LCSC","https://www.lcsc.com/search?q=10k+0805","0.04"
+"U3","1","AMS1117-3.3 regulator","SOT-223 (fed from the 12V rail)","Package_TO_SOT_SMD:SOT-223-3_TabPin2","LCSC","https://www.lcsc.com/search?q=AMS1117-3.3","0.2"
+"U5","1","LM2596S-12 regulator","TO-263-5","Package_TO_SOT_SMD:TO-263-5_TabPin3","LCSC","https://www.lcsc.com/search?q=LM2596S-12","1.5"
+"-","1","Riden DPS5005 communication version","Programmable buck 0-50V 5A, 6-55V input, Modbus serial. With a 24V input the output tops out around 23V","-","AliExpress / Amazon / Riden resellers","https://it.aliexpress.com/item/1005003611553445.html","30"
+"SW1, SW2","2","SPST switch 10A DC","Rated for DC current","(external, on terminals)","Amazon / AliExpress","https://it.aliexpress.com/item/1005005261096988.html","4.0"
+"-","2","0.96 inch I2C OLED display","Check pin order (GND, VCC, SCL, SDA)","(external)","Amazon / AliExpress","https://it.aliexpress.com/item/1005006141235306.html","6.0"
+"-","2","KY-040 encoder module","Correct pin-to-pin cable to J9/J10","(external)","Amazon / AliExpress","https://it.aliexpress.com/item/1005006060621481.html","3.0"
+"-","2","Encoder knob","May be included with encoder purchase","(external)","Amazon / AliExpress",,"2.0"
+"-","1","Banana binding post pair (red and black)","Rated for 5A","(external)","Amazon / AliExpress","https://it.aliexpress.com/item/1005005610222281.html","4.0"
+"-","1","24V DC power supply","At least 5A","(external)","Amazon / AliExpress","https://www.amazon.it/Security-01-Alimentatore-spina-Plug-XH2400-1500WG/dp/B0CJFH8T6C/ref=sr_1_169_sspa?dib=eyJ2IjoiMSJ9.Wt0ITyl2uFDlcwI6dSX7GGkmoJ3X2JmxELbRTn5blyyg_cgr508AiJQyLtPfDene_MAF41XQDXHsAFwxvbEuT8xcV_1RPUDzQMuv6uayEtS5ci4y-onmKqpg0LTgRCa23rxQtc5TpjFz5GDWSNEhOSkoeuF7YZd3BJITGn1VsVR-Gtf5AZG5vhT8X5SLzCH7l5utnwByurPf6pC4OrUyoSMHth7KFoynqEtcxMHzc1Uxrmn7tC_R0S4R3yz6rdoxQ6GCsN5mebVFucCdGlWwYqg7iBGOQPkjkxyhdPEaqXs.he70XL1EO9XNyXvWBYkUcbWrS-GCXcQjJlxtNt0ulKk&dib_tag=se&keywords=Ac+24v+Power+Supply&qid=1789929503&s=electronics&sr=1-169-spons&aref=BVKy2PNAD7&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGZfbmV4dA&psc=1","13"
+"-","1","Custom PCB (batch of 5-10)","Fabrication + shipping","(Gerber files)","JLCPCB or similar",,"20"
+"-","1","2-channel oscilloscope","for ripple and noise analysis","(external)","Amazon / AliExpress","https://it.aliexpress.com/item/1005009751654965.html","160.0"
+TOTAL,,,,,,,254
