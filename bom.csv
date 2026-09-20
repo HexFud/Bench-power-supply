@@ -1,11 +1,12 @@
 # Bill of Materials (BOM) & Estimated Costs (USD)
 
-### 🔌 Main Modules
+### Main Modules & Hardware
 | Qty | Component | Description | Est. Price (USD) |
+| :---: | :--- | :--- | :--- |
 | **1** | Buck Converter Module | CC/CV Step-Down Module (XL4015 5A or XL4016 8A) | $4.00 - $7.00 |
 | **1** | Digital Panel Meter | Dual LED Display (Red/Blue), 100V / 10A (5 wires) | $4.00 - $6.00 |
 | **1** | Power Supply Unit | 24V DC Output Power Brick (min. 4A - 5A) | $15.00 - $22.00 |
-| **1 (Batch)** | Custom PCB Manufacturing | **$15.00 - $25.00** |
+| **1 (Batch)** | Custom PCB Manufacturing | Professional PCB fabrication (5-10 boards + shipping) | $15.00 - $25.00 |
 | **1** | **C1** | 1000µF, 50V Electrolytic Capacitor (THT) | $0.30 |
 | **1** | **C2** | 100nF (0.1µF), 50V Ceramic Capacitor (SMD 0805) | $0.10 |
 | **1** | **D1** | Schottky Diode 10A (e.g., 10SQ045) | $0.50 |
@@ -21,9 +22,9 @@
 | **2** | Binding Posts | Heavy-Duty Banana Jacks (1x Red, 1x Black - set) | $4.00 (pair) |
 | **-** | Wiring | Heavy-duty hookup wire (AWG 14 or 16) | $6.00 (spool) |
 
-### 🔬 Diagnostic & Testing Equipment (Optional but Recommended)
+### Diagnostic & Testing Equipment (Optional but Recommended)
 | Qty | Equipment | Description & Purpose | Est. Price (USD) |
 | :---: | :--- | :--- | :--- |
-| **1** | **Digital Storage Oscilloscope** | **Entry-level 2-channel scope | **$150.00 - $170.00** |
+| **1** | **Digital Storage Oscilloscope** | Entry-level 2-channel scope (e.g., Hantek 2D72, FNIRSI, or basic Siglent/Rigol used). Essential for ripple analysis, transient response, and troubleshooting high-frequency PWM noise. | $150.00 - $170.00 |
 
-**💡 Estimated Total Project Cost:** ~$210.00 - $260.00
+** Estimated Total Project Cost:** ~$210.00 - $260.00
