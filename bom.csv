@@ -1,0 +1,29 @@
+# Bill of Materials (BOM) & Estimated Costs (USD)
+
+### 🔌 Main Modules
+| Qty | Component | Description | Est. Price (USD) |
+| **1** | Buck Converter Module | CC/CV Step-Down Module (XL4015 5A or XL4016 8A) | $4.00 - $7.00 |
+| **1** | Digital Panel Meter | Dual LED Display (Red/Blue), 100V / 10A (5 wires) | $4.00 - $6.00 |
+| **1** | Power Supply Unit | 24V DC Output Power Brick (min. 4A - 5A) | $15.00 - $22.00 |
+| **1 (Batch)** | Custom PCB Manufacturing | **$15.00 - $25.00** |
+| **1** | **C1** | 1000µF, 50V Electrolytic Capacitor (THT) | $0.30 |
+| **1** | **C2** | 100nF (0.1µF), 50V Ceramic Capacitor (SMD 0805) | $0.10 |
+| **1** | **D1** | Schottky Diode 10A (e.g., 10SQ045) | $0.50 |
+| **1** | **D2** | Status LED (0805 / THT) | $0.10 |
+| **1** | **F1** | 6.3A Fuse + 5x20mm PCB Holder | $0.80 |
+| **2** | **R1, R2** | 2.2kΩ Resistors (SMD 0805) | $0.10 |
+| **2** | **J1, J7** | Phoenix Screw Terminal Blocks (2-pin & 4-pin, 5.08mm) | $0.50 each |
+| **2** | **J3, J4** | Sockets / Test Point Pads | $0.10 |
+| **2** | **J8, J9** | Pin Headers (3-pin & 2-pin, 2.54mm) | $0.20 |
+| **2** | Potentiometers | Linear Potentiometers (Matched to Buck module, e.g., 10kΩ) | $1.00 each |
+| **2** | Control Knobs | Plastic or Aluminum Knobs | $0.50 each |
+| **2** | DC Toggle Switches | SPST Heavy-Duty Switches (min. 10A DC) | $1.50 each |
+| **2** | Binding Posts | Heavy-Duty Banana Jacks (1x Red, 1x Black - set) | $4.00 (pair) |
+| **-** | Wiring | Heavy-duty hookup wire (AWG 14 or 16) | $6.00 (spool) |
+
+### 🔬 Diagnostic & Testing Equipment (Optional but Recommended)
+| Qty | Equipment | Description & Purpose | Est. Price (USD) |
+| :---: | :--- | :--- | :--- |
+| **1** | **Digital Storage Oscilloscope** | **Entry-level 2-channel scope | **$150.00 - $170.00** |
+
+**💡 Estimated Total Project Cost:** ~$210.00 - $260.00
