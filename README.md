@@ -14,6 +14,21 @@ To simplify the assmebly process i designed in kicad a small pcb where you conne
 * schottky diode to protect against invers polarity
 * filtering capacitor
 
+## First power-up
+
+1. Do not plug the Nano, the DPS and the displays yet.
+2. Power the PCB with 24V and check the 12V rail after the LM2596 and the 3V3 rail.
+3. Power off, plug everything in, and power on again with no load on the output.
+4. The output stays OFF at boot; enable it with a long press on the voltage encoder.
+
+## Firmware
+
+* Arduino IDE, board "Arduino Nano ESP32"
+* Libraries: Adafruit SSD1306, Adafruit GFX Library
+* Firmware: `Firmware/bench_psu.ino`
+* Register addresses and scales are constants at the top of the sketch: check them against
+  the protocol document of your DPS module.
+
 ## ⚠️ Crucial Assembly Notes
 
 1. **Modifying the Buck Converter:** 
