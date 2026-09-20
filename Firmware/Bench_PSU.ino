@@ -3,10 +3,12 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-static const uint8_t ENC_V_CLK = D7, ENC_V_DT = D5, ENC_V_SW = D3;
-static const uint8_t ENC_I_CLK = D6, ENC_I_DT = D4, ENC_I_SW = D2;
-static const uint8_t DPS_RX_PIN = D0;
-static const uint8_t DPS_TX_PIN = D1;
+static const uint8_t ENC_V_CLK = 10, ENC_V_DT = 8, ENC_V_SW = 6;
+static const uint8_t ENC_I_CLK = 9, ENC_I_DT = 7, ENC_I_SW = 5;
+static const uint8_t DPS_RX_PIN = 44;
+static const uint8_t DPS_TX_PIN = 43;
+static const uint8_t I2C_SDA_PIN = 11;
+static const uint8_t I2C_SCL_PIN = 12;
 
 static const bool ENC_V_INVERT = false;
 static const bool ENC_I_INVERT = false;
@@ -43,7 +45,7 @@ static const uint32_t WRITE_GAP_MS  = 40;
 static const uint32_t SYNC_HOLD_MS  = 600;
 static const uint32_t LONG_PRESS_MS = 800;
 
-static HardwareSerial dpsSerial(1);
+#define dpsSerial Serial1
 static Adafruit_SSD1306 oled1(128, 64, &Wire, -1);
 #if USE_DISPLAY2
 static Adafruit_SSD1306 oled2(128, 64, &Wire, -1);
@@ -56,6 +58,22 @@ struct DpsState {
   uint8_t prot = 0;
 };
 static DpsState dps;
+
+struct Encoder {
+  uint8_t pinA, pinB;
+  bool invert;
+  volatile uint8_t state;
+  volatile int32_t acc;
+};
+
+enum BtnEvent { BTN_NONE, BTN_SHORT, BTN_LONG };
+
+struct Button {
+  uint8_t pin;
+  bool down;
+  bool longFired;
+  uint32_t tChange, tPress;
+};
 
 static float targetV = 0.0f, targetI = 0.5f;
 static bool dirtyV = false, dirtyI = false;
@@ -133,13 +151,6 @@ static bool pollDps() {
 
 DRAM_ATTR static const int8_t ENC_TABLE[16] = {0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, 0};
 
-struct Encoder {
-  uint8_t pinA, pinB;
-  bool invert;
-  volatile uint8_t state;
-  volatile int32_t acc;
-};
-
 static Encoder encV = {ENC_V_CLK, ENC_V_DT, ENC_V_INVERT, 0, 0};
 static Encoder encI = {ENC_I_CLK, ENC_I_DT, ENC_I_INVERT, 0, 0};
 static portMUX_TYPE encMux = portMUX_INITIALIZER_UNLOCKED;
@@ -167,15 +178,6 @@ static void encBegin(Encoder& e) {
   attachInterruptArg(digitalPinToInterrupt(e.pinA), encIsr, &e, CHANGE);
   attachInterruptArg(digitalPinToInterrupt(e.pinB), encIsr, &e, CHANGE);
 }
-
-enum BtnEvent { BTN_NONE, BTN_SHORT, BTN_LONG };
-
-struct Button {
-  uint8_t pin;
-  bool down;
-  bool longFired;
-  uint32_t tChange, tPress;
-};
 
 static Button btnV = {ENC_V_SW, false, false, 0, 0};
 static Button btnI = {ENC_I_SW, false, false, 0, 0};
@@ -326,7 +328,7 @@ void setup() {
 
   dpsSerial.begin(DPS_BAUD, SERIAL_8N1, DPS_RX_PIN, DPS_TX_PIN);
 
-  Wire.begin();
+  Wire.begin(I2C_SDA_PIN, I2C_SCL_PIN);
   Wire.setClock(400000);
   oled1Ok = oled1.begin(SSD1306_SWITCHCAPVCC, OLED1_ADDR);
 #if USE_DISPLAY2
